@@ -152,8 +152,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=$USER
-Group=$USER
+User=root
+Group=root
 ExecStart=/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties
 ExecStop=/opt/kafka/bin/zookeeper-server-stop.sh
 Restart=on-abnormal
@@ -171,8 +171,8 @@ After=zookeeper.service
 
 [Service]
 Type=simple
-User=$USER
-Group=$USER
+User=root
+Group=root
 # Adjust the JAVA_HOME path if your OpenJDK 11 is in a different location
 Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64"
 ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
